@@ -1,0 +1,14 @@
+/* Tailwind base is via CDN; these are small utility classes for consistency */
+.btn { @apply rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition; }
+.btn-primary { @apply inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 hover:bg-yellow-300 active:translate-y-[1px] transition; }
+.btn-danger { @apply rounded-xl border border-red-300 text-red-600 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-950/30 transition; }
+.output { @apply min-h-[320px] whitespace-pre-wrap font-mono text-[0.95rem] leading-relaxed p-4 rounded-xl border border-dashed border-neutral-300 dark:border-neutral-700; }
+
+
+/* Fallback if Tailwind's @apply isn't processed (CDN mode). Duplicate minimal styles */
+@supports not (aspect-ratio: 1) {
+.btn { border-radius: 0.75rem; padding: 0.5rem 1rem; border: 1px solid #d4d4d8; }
+.btn-primary { border-radius: 0.75rem; padding: 0.5rem 1rem; background: #facc15; color: #111827; font-weight: 600; }
+.btn-danger { border-radius: 0.75rem; padding: 0.5rem 1rem; border: 1px solid #fecaca; color: #dc2626; }
+.output { min-height: 320px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 0.95rem; line-height: 1.6; padding: 1rem; border-radius: 0.75rem; border: 1px dashed #d4d4d8; }
+}
